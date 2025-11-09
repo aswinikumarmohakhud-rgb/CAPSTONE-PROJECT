@@ -1,25 +1,12 @@
-@@ -0,0 +1,24 @@
+@@ -0,0 +1,11 @@
 #!/bin/bash
-# maintenance_menu.sh - Menu-driven system maintenance suite
+# update_cleanup.sh - Simulate system updates and cleanup
 
-while true; do
-    clear
-    echo "===================================="
-    echo "    SYSTEM MAINTENANCE SUITE"
-    echo "===================================="
-    echo "1. Backup Files"
-    echo "2. Update & Clean System"
-    echo "3. Monitor Logs"
-    echo "4. Exit"
-    echo "------------------------------------"
-    read -p "Enter your choice: " choice
+echo "🔄 Checking for updates..."
+sleep 2
+echo "✅ System packages updated successfully (simulated)."
 
-    case $choice in
-        1) bash backup.sh ;;
-        2) bash update_cleanup.sh ;;
-        3) bash log_monitor.sh ;;
-        4) echo " Exiting..."; exit 0 ;;
-        *) echo " Invalid choice";;
-    esac
-    read -p "Press Enter to continue..."
-done
+LOG_DIR="/c/Users/$USERNAME/AppData/Local/Temp"
+echo "🧹 Cleaning temporary files in $LOG_DIR..."
+rm -rf "$LOG_DIR"/*
+echo "✅ Cleanup done!"
